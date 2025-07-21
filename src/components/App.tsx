@@ -4,10 +4,10 @@ import Modal from './Modal';
 import '../styles.css';
 
 // Define image paths directly
-const journalistImage = '/images/journalist.png';
-const teacherImage = '/images/teacher.png';
-const atHomeImage = '/images/at-home.png';
-const userImage = '/images/user.png';
+const journalistImage = 'images/journalist.png';
+const teacherImage = 'images/teacher.png';
+const atHomeImage = 'images/at-home.png';
+const userImage = 'images/user.png';
 
 // Sample character data
 const characters = [
