@@ -1,0 +1,257 @@
+/* 8-bit style CSS */
+:root {
+  --primary-color: #ff0000;
+  --secondary-color: #0000ff;
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --border-color: #ffffff;
+  --pixel-size: 2px;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 20px;
+}
+
+body {
+  font-family: 'Press Start 2P', cursive;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: var(--pixel-size) solid var(--border-color);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  background-color: #333;
+}
+
+/* 8-bit title */
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #ff69b4; /* Pink color for "SELECT YOUR ALLIE" */
+  text-shadow: 4px 4px 0 #000;
+  letter-spacing: 2px;
+  animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.8; }
+}
+
+/* Character selection layout */
+.character-selection {
+  display: flex;
+}
+
+.character-image {
+  flex: 1;
+  padding: 10px;
+  background-color: #333;
+  image-rendering: pixelated;
+}
+
+.character-image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.character-stats {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Stats bars */
+.stat-bar {
+  margin-bottom: 15px;
+}
+
+.stat-name {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.stat-container {
+  height: 20px;
+  background-color: #333;
+  border: var(--pixel-size) solid var(--border-color);
+  position: relative;
+}
+
+.stat-value {
+  height: 100%;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease-in-out;
+}
+
+/* Button styles */
+.pixel-button {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  border: var(--pixel-size) solid var(--border-color);
+  padding: 10px 20px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.1s;
+}
+
+.pixel-button:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.pixel-button:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
+}
+
+.select-button {
+  background-color: #00aa00; /* Green color */
+  font-size: 18px; /* Larger font */
+  padding: 12px 24px; /* Larger padding */
+  margin: 0 10px; /* Add margin on sides */
+}
+
+/* Character name */
+.character-name {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* Character description */
+.character-description {
+  font-size: 14px;
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #222;
+  border: var(--pixel-size) solid var(--border-color);
+  line-height: 1.6;
+  color: #ffcc00;
+  text-shadow: 1px 1px 0 #000;
+  height: 180px;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 80%;
+  max-width: 800px;
+  max-height: 80vh;
+  background-color: #333;
+  border: var(--pixel-size) solid var(--border-color);
+  box-shadow: 10px 10px 0 rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+  text-shadow: 3px 3px 0 #000;
+}
+
+.modal-stats-container {
+  position: relative;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Take up remaining space */
+}
+
+.modal-stats {
+  max-height: calc(80vh - 120px); /* Subtract space for title and padding */
+  overflow-y: auto;
+  padding-right: 5px; /* Add some padding for the scrollbar */
+}
+
+/* Close button in the modal */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-top: 0;
+}
+
+.modal-stat-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: var(--pixel-size) solid var(--border-color);
+  background-color: #222;
+}
+
+.modal-stat-name {
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.modal-stat-value {
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Scroll down arrow */
+.scroll-down-arrow {
+  width: 40px;
+  height: 40px;
+  position: absolute; /* Back to absolute positioning */
+  bottom: 10px; /* Position near the bottom of the container */
+  left: 50%;
+  transform: translateX(-50%); /* Animation will handle the rotation */
+  image-rendering: pixelated;
+  animation: bounce 0.8s infinite alternate;
+  z-index: 1001; /* Higher than modal-overlay (1000) */
+  /* Using img element instead of background-image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
