@@ -2,7 +2,7 @@
   "name": "BuiltFromScratch",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "docs/index.js",
   "scripts": {
     "build": "webpack --mode production",
     "start": "webpack serve --mode development --open"
